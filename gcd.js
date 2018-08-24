@@ -11,12 +11,12 @@ function gcd(x, y) {
 	min = Math.abs(Math.min(x, y));
 	remainder = max % min;
 
-	if (x === 0 && y === 0) return undefined;
-	else if (x === 0 || y === 0) return max;
+	if (!x && !y) return undefined;
+	else if (!x || !y) return max;
 
 	console.log(`${max} = (${min} * ${Math.floor(max / min)}) + ${remainder}`);
 
-	if (remainder === 0) return min;
+	if (!remainder) return min;
 	else if (remainder === 1) return 1;
 	else return gcd(min, remainder);
 }
